@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_get_x_app/controllers/clicks_controller.dart';
+import 'package:flutter_get_x_app/first_page.dart';
 import 'package:get/get.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetBuilder<ClicksController>(builder: (clickCount) {
+            GetBuilder<ClicksController>(builder: (_) {
               return Container(
                 margin: const EdgeInsets.all(15),
                 width: double.maxFinite,
@@ -27,7 +28,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "You have clicked ${clickCount.x.toString()}",
+                    "You have clicked ${click.x.toString()}",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -47,11 +48,37 @@ class MyHomePage extends StatelessWidget {
                 height: 110,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
+                  color: Colors.greenAccent,
+                ),
+                child: Center(
+                  child: Text(
+                    "Tap me",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.to(
+                  () => FirstPage(),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                width: double.maxFinite,
+                height: 110,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
                   color: Colors.teal,
                 ),
                 child: Center(
                   child: Text(
-                    "Hello there",
+                    "Go to first page",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -73,29 +100,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Hello there",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: const EdgeInsets.all(15),
-                width: double.maxFinite,
-                height: 110,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.teal,
-                ),
-                child: Center(
-                  child: Text(
-                    "Hello there",
+                    "Go to Second Page",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,

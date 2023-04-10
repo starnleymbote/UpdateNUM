@@ -9,4 +9,10 @@ class ClicksController extends GetxController {
     update();
     print(_x);
   }
+
+  void decrementX() {
+    _x--;
+    update();
+    print(_x);
+  }
 }
