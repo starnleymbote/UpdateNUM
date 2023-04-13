@@ -28,14 +28,14 @@ class FirstPage extends StatelessWidget {
               return Container(
                 margin: const EdgeInsets.all(15),
                 width: double.maxFinite,
-                height: 110,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.teal,
                 ),
                 child: Center(
                   child: Text(
-                    "Total clicks : " + clicks.x.toString(),
+                    "Total clicks sum : " + clicks.x.toString(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,

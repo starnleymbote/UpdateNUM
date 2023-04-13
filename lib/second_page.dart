@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_get_x_app/controllers/clicks_controller.dart';
+import 'package:flutter_get_x_app/third_page.dart';
 import 'package:get/get.dart';
 
 class SecondPage extends StatelessWidget {
@@ -24,6 +25,7 @@ class SecondPage extends StatelessWidget {
         width: double.maxFinite,
         height: double.maxFinite,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GetBuilder<ClicksController>(builder: (_) {
               return Container(
@@ -48,7 +50,8 @@ class SecondPage extends StatelessWidget {
             }),
             GestureDetector(
               onTap: () {
-                clicks.decrementX();
+                Get.to(() => ThirdPage());
+                //clicks.decrementX();
               },
               child: Container(
                 margin: const EdgeInsets.all(15),
@@ -60,7 +63,7 @@ class SecondPage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Decrease X",
+                    "Go to Third Page",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
